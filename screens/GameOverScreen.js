@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, Button, Image } from 'react-native';
+import { StyleSheet, View, Text, Dimensions, Image } from 'react-native';
 import DefaultStyles from '../constants/DefaultStyles';
 import Colors from '../constants/Colors';
 import MainButton from '../components/MainButton';
@@ -34,13 +34,13 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     imageContainer: {
-        borderRadius: 150,
+        borderRadius: Dimensions.get('window').width * 0.7 / 2,
         borderWidth: 3,
         borderColor: 'black',
-        width: 300,
-        height: 300,
+        width: Dimensions.get('window').width * 0.7,
+        height: Dimensions.get('window').width * 0.7,
         overflow: 'hidden',
-        marginVertical: 30
+        marginVertical: Dimensions.get('window').height / 30
     },
     highlight: {
         color: Colors.primary,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     resultContainer: {
         marginHorizontal: 20,
-        marginVertical: 20
+        marginVertical: Dimensions.get('window').height / 60
     }
 });
 
